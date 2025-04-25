@@ -16,7 +16,7 @@ public class ExampleController {
 
 	@HeaderValidation
 	@GetMapping("/hello")
-	public void hello(@RequestHeader("X-API-KEY") String apiKey) {
+	public void hello(@RequestHeader("X-API-KEY") String key) {
 
 	}
 

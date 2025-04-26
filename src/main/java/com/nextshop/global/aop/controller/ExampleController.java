@@ -1,7 +1,6 @@
 package com.nextshop.global.aop.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,9 +13,9 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 public class ExampleController {
 
-	@HeaderValidation
+	@HeaderValidation(key = "X-API-KEY")
 	@GetMapping("/hello")
-	public void hello(@RequestHeader("X-API-KEY") String key) {
+	public void hello() {
 
 	}
 

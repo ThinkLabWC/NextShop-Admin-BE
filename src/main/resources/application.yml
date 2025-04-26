@@ -1,6 +1,10 @@
 server:
   port: 8080
 
+app:
+  required-header:
+    api-key: true
+
 spring:
   jpa:
     show-sql: true

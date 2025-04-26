@@ -17,7 +17,7 @@ public class WebConfig implements WebMvcConfigurer {
 	private final AuthorizationInterceptor authorizationInterceptor;
 
 	private final List<String> DEFAULT_EXCLUDE = List.of(
-		"/",
+		"/**",
 		"/error"
 	);
 

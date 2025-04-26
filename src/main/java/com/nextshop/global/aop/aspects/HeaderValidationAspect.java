@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 public class HeaderValidationAspect {
 
 	@Value("${app.required-header.api-key}")
-	boolean key;
+	private boolean key;
 
 	@Before("@annotation(headerValidation)")
 	public void validateHeader(HeaderValidation headerValidation) {
@@ -30,7 +30,7 @@ public class HeaderValidationAspect {
 			HttpServletRequest request = requestAttributes.getRequest();
 
 			// request header에 있는 토큰 체크하기
-			String token = request.getHeader("X-API-KEY");
+			final String token = request.getHeader("X-API-KEY");
 			if (isBlank(token)) {
 				throw new IllegalArgumentException("X-API-KEY is empty");
 			}
